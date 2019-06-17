@@ -9,3 +9,10 @@
     align-items: center;
     flex-wrap: wrap;
   }
+
+img {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+
+}
