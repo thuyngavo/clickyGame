@@ -5,6 +5,8 @@ import Banner from './components/Banner';
 import IconCard from './components/IconCard';
 import Icons from './icons.json';
 import "./components/iconCard.css";
+import "./components/NavBar.css"
+import "./components/Banner.css"
 
 
 
