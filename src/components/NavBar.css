@@ -1,14 +1,8 @@
-p {
+h1, h2 {
   color: white;
   font-weight: bold;
-  text-align: right;
-  margin-right: 50px;
-}
-
-h1 {
-  color: white;
-  font-weight: bold;
-  text-align: left;
+  text-align: center;
+  margin: 0;
 }
 
 header {

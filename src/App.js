@@ -62,7 +62,7 @@ class App extends Component {
     console.log(`the score is ${score}`);
     if (score === this.state.Icons.length) {
       this.setState({
-        result: "You win!",
+        result: "Winner!",
         topScore: score,
         currentScore: 0,
         clicked: [],
@@ -77,7 +77,7 @@ class App extends Component {
     } else {
       this.setState({
         currentScore: score,
-        result: "Correct!"
+        result: "You got this!"
       });
     }
     this.resetIconArray();
@@ -106,15 +106,15 @@ class App extends Component {
   render() {
     return (
       <div className='container'>
-        <NavBar topScore={this.state.topScore} currentScore={this.state.currentScore} status={this.state.result}/>
-        <Banner />
+        <NavBar />
+        <Banner topScore={this.state.topScore} currentScore={this.state.currentScore} status={this.state.result}/>
         <div className='mainStyle'>
         {this.state.Icons.map(icon => (
-        <IconCard
-          id={icon.id}
-          image={icon.image}
-          clickedPlayer={this.clickedPlayer}
-        />
+          <IconCard
+            id={icon.id}
+            image={icon.image}
+            clickedPlayer={this.clickedPlayer}
+          />
         ))}
         </div>
       </div>
