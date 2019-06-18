@@ -1,5 +1,9 @@
 h2 {
-    color: rgb(239, 240, 241);
+    color: white;
     font-weight: bold;
     text-align: center;
+}
+
+article {
+    background-color: grey;
 }

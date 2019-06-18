@@ -1,11 +1,16 @@
 p {
-  color: rgb(239, 240, 241);
+  color: white;
   font-weight: bold;
-  text-align: center;
+  text-align: right;
+  margin-right: 50px;
 }
 
 h1 {
-  color: rgb(239, 240, 241);
+  color: white;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
+}
+
+header {
+    background-color: grey;
 }

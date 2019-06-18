@@ -16,7 +16,7 @@ const shuffleArray = (array) => {
   while (counter > 0) {
       // Pick a random index
       let index = Math.floor(Math.random() * counter);
-      // Decrease counter by 1
+      // Decrease by 1
       counter--;
       // And swap the last element with it
       let temp = array[counter];
@@ -36,13 +36,11 @@ class App extends Component {
     gameOver: false
   };
 
-  // When the page loads and the component mounts,
   // display starting message
   componentDidMount() {
     this.setState({result: "Click a character to get started"})
   }
 
-  // When a player gets clicked,
   // increase points and add id of element to array.
   clickedPlayer = (id) => {
     console.log(`Picture clicked with id: ${id}`);
@@ -64,18 +62,17 @@ class App extends Component {
     console.log(`the score is ${score}`);
     if (score === this.state.Icons.length) {
       this.setState({
-        result: "You win! Start clicking to play again!",
+        result: "You win!",
         topScore: score,
         currentScore: 0,
         clicked: [],
-        //Icons,
         gameOver: false
       });
     } else if (score > this.state.topScore) {
       this.setState({
         topScore: score,
         currentScore: score,
-        result: "Correct! New high score!",
+        result: "New high score!",
       });
     } else {
       this.setState({
@@ -92,16 +89,15 @@ class App extends Component {
       points: 0,
       currentScore:0,
       topScore: this.state.topScore,
-      result: "You Loss!",
+      result: "Oh No! [GAME OVER] Try again next time.",
       clicked: [],
       //Icons,
       gameOver: true
     });
-    console.log('Game over? ', this.state.gameOver);
     this.resetIconArray();
   }
 
-  //set the array to be mapped to a new scrambled version using shuffle algorithm
+  // function to reset icons at random
   resetIconArray = () => {
     let newScramble = shuffleArray(Icons);
     this.setState({Icons: newScramble})
