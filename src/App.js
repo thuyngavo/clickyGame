@@ -8,17 +8,16 @@ import "./components/iconCard.css";
 import "./components/NavBar.css"
 import "./components/Banner.css"
 
-
-
 const shuffleArray = (array) => {
+  //assigning variable ame to array
   let counter = array.length;
-  // While there are elements in the array
+  //while loop to loop through array
   while (counter > 0) {
-      // Pick a random index
+      // pick a random index
       let index = Math.floor(Math.random() * counter);
-      // Decrease by 1
+      // decrease counter by 1
       counter--;
-      // And swap the last element with it
+      // change last element with it
       let temp = array[counter];
       array[counter] = array[index];
       array[index] = temp;
@@ -27,6 +26,7 @@ const shuffleArray = (array) => {
 };
 class App extends Component {
 
+  
   state = {
     currentScore: 0,
     topScore: 0,
@@ -36,12 +36,11 @@ class App extends Component {
     gameOver: false
   };
 
-  // display starting message
   componentDidMount() {
     this.setState({result: "Click a character to get started"})
   }
 
-  // increase points and add id of element to array.
+  // increase points and add id of element to array on click 
   clickedPlayer = (id) => {
     console.log(`Picture clicked with id: ${id}`);
     if(!this.state.clicked.includes(id)){
@@ -55,11 +54,9 @@ class App extends Component {
     }
   }
 
-  // When the user makes a new click, increment the points by 1
-  // and check if the user has won
+  //increment the point by 1 when a new charapeter is picked and check if the user has won
   pointIncrease = () => {
     let score = this.state.currentScore + 1;
-    console.log(`the score is ${score}`);
     if (score === this.state.Icons.length) {
       this.setState({
         result: "Winner!",
